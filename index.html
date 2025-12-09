@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Carrusel Ascender</title>
+    <!-- Importamos Poppins de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET Y BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #222; /* Fondo oscuro para resaltar el diseño al editar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* LIENZO PRINCIPAL (1080x1080px para Instagram) */
+        .instagram-post {
+            width: 1080px; /* Tamaño real IG */
+            height: 1080px; /* Tamaño real IG */
+            background-color: #f7f2e9; /* Fondo Ascender */
+            color: #2d424b; /* Color Primario Ascender */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribuye espacio entre header, contenido y footer */
+            padding: 80px; /* Margen interno generoso (respiración Apple) */
+            box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Sombra solo para visualización web */
+            
+            /* TRUCO PARA QUE SE VEA EN PANTALLAS CHICAS (ESCALADO) */
+            /* Si sacas captura, asegurate de estar al 100% de zoom o ajusta esto */
+            transform: scale(0.6); 
+            transform-origin: center;
+        }
+
+        /* --- ELEMENTOS DE DISEÑO --- */
+
+        /* 1. Header: Logo */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2d424b;
+            padding-bottom: 5px;
+        }
+
+        /* 2. Contenido Central */
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Alineación Apple: Izquierda o Centro. Izquierda es más lectura rápida. */
+            gap: 30px;
+        }
+
+        /* Pill / Etiqueta del Módulo */
+        .module-tag {
+            background-color: rgba(45, 66, 75, 0.1); /* Color primario al 10% opacidad */
+            color: #2d424b;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        /* Título Principal (El Gancho) */
+        .headline {
+            font-size: 86px; /* Grande y bold */
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px; /* Kerning apretado estilo editorial */
+        }
+
+        /* Subtítulo o Bajada */
+        .sub-headline {
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 1.4;
+            opacity: 0.85; /* Un poco más suave */
+            max-width: 90%;
+        }
+
+        /* Línea decorativa minimalista */
+        .separator {
+            width: 120px;
+            height: 6px;
+            background-color: #2d424b;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        /* 3. Footer: Indicador de Swipe o Branding sutil */
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.6;
+        }
+
+        .swipe-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Icono de flecha simple con CSS */
+        .arrow-right {
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #2d424b;
+        }
+
+        /* --- CLASES DE UTILIDAD PARA CAMBIAR EL TEXTO FÁCILMENTE --- */
+        .highlight {
+            color: #2d424b; /* Opcional: Si queres resaltar una palabra en otro tono, definilo acá */
+            font-style: italic; /* Opcional: para darle énfasis a palabras clave */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- LIENZO DE CAPTURA (1080x1080) -->
+    <!-- Para editar: Cambiá el texto dentro de los divs -->
+    
+    <div class="instagram-post">
+        
+        <!-- HEADER: LOGO -->
+        <div class="header">
+            <!-- Si tenés el SVG del logo, reemplazá este texto. Si no, este texto funciona como logo minimalista -->
+            <div class="logo-text">ASCENDER</div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="content">
+            <!-- ETIQUETA DEL MÓDULO -->
+            <div class="module-tag">Módulo 5</div>
+
+            <!-- TÍTULO FUERTE -->
+            <h1 class="headline">
+                Difícil será <br>decir que no.
+            </h1>
+
+            <!-- SEPARADOR -->
+            <div class="separator"></div>
+
+            <!-- BAJADA / VALOR -->
+            <p class="sub-headline">
+                No se trata de vender más. Se trata de crear una oferta tan valiosa que el cliente se sienta estúpido si la rechaza.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-brand">@juanbondare</div>
+            
+            <div class="swipe-indicator">
+                <span>DESLIZÁ</span>
+                <div class="arrow-right"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
