@@ -61,9 +61,11 @@
             font-size: 28px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            border-bottom: 2px solid #2d424b;
-            padding-bottom: 5px;
+            /* Eliminamos el borde inferior que lo hacía parecer más un título, preparado para un icono */
+            /* border-bottom: 2px solid #2d424b; */
+            padding-bottom: 0px; 
         }
+        /* Si se reemplaza por un <img/> o <svg/>, adaptar este estilo o usar un contenedor */
 
         /* 2. Contenido Central */
         .content {
@@ -162,7 +164,8 @@
         
         <!-- HEADER: LOGO -->
         <div class="header">
-            <!-- Si tenés el SVG del logo, reemplazá este texto. Si no, este texto funciona como logo minimalista -->
+            <!-- NOTA: REEMPLAZÁ ESTE DIV COMPLETO CON LA ETIQUETA <img> O <svg> DEL ICONO DE ASCENDER. -->
+            <!-- Ejemplo: <img src="URL_DEL_ICONO" alt="Ascender Logo" style="height: 40px; width: auto;"> -->
             <div class="logo-text">ASCENDER</div>
         </div>
 
@@ -187,7 +190,7 @@
 
         <!-- FOOTER -->
         <div class="footer">
-            <div class="footer-brand">@juanbondare</div>
+            <div class="footer-brand">@ascender.uno</div>
             
             <div class="swipe-indicator">
                 <span>DESLIZÁ</span>
